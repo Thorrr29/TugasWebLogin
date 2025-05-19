@@ -1,3 +1,12 @@
+<?php
+session_start();
+if (isset($_SESSION['user'])) {
+    header("Location: dashboard.php");
+    exit();
+}
+$error = $_SESSION['error'] ?? '';
+unset($_SESSION['error']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
